@@ -1,0 +1,15 @@
+.contact {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  display: inline-flex;
+  margin-left: auto;
+  padding: 0 2px;
+
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
