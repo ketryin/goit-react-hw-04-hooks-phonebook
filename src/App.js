@@ -5,18 +5,14 @@ import ContactsList from "./components/ContactsList";
 import Filter from "./components/Filter";
 
 function App() {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(
+    JSON.parse(localStorage.getItem("contacts") ?? [])
+  );
   const [filter, setFilter] = useState("");
 
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(contacts));
   }, [contacts]);
-
-  useEffect(() => {
-    if (localStorage.getItem("contacts")) {
-      setContacts(JSON.parse(localStorage.getItem("contacts")));
-    }
-  }, []);
 
   const addContact = (name, number) => {
     if (contacts.find((contact) => contact.name === name)) {
